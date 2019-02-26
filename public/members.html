@@ -28,27 +28,77 @@
               <li class="dropdown-menu">           
                 <li><a class="nav-link" href="index.html">About</a></li>
                 <li><a class="nav-link" href="blog.html">blog</a></li>
-								<li><a class="nav-link" href="contact.html">Contact</a></li>   
-								<li><a class="nav-link" href="/logout">logout</a></li>     
+								<li><a class="nav-link" href="contact.html">Contact Me</a></li>   
+								<li><a class="nav-link" href="aboutme.html">About Me</a></li>
+								<li><a class="nav-link" href="/logout">Logout</a></li>  
+								<h4 class="member-h2">Welcome <span class="member-name"></span></h4>   
               </li>
             </ul>
         </div>
 		</nav>
+		<div class="jumbotron jumbotron-fluid">
+			<div class="container">
+				<h1 class="display-4">Fluid jumbotron</h1>
+				<p class="lead">This is a modified jumbotron that occupies the entire horizontal space of its parent.</p>
+				<div class="content">We could have anything here</div>
+ 
+				<div class="slide show" style="background-image: url('images/3.jpg');"></div>
+				<div class="slide" style="background-image: url('images/1.jpg');"></div>
+				<div class="slide" style="background-image: url('images/2.jpg');"></div>
+				<div class="slide" style="background-image: url('images/4.jpg');"></div>
+				<div class="slide" style="background-image: url('images/5.jpg');"></div>
+				<div class="slide" style="background-image: url('images/3.jpg');"></div>
+			</div>
+		</div>
+		<!--
   <div class="container">
     <div class="row">
       <div class="col-md-6 col-md-offset-3">
-        <h2>Welcome <span class="member-name"></span></h2>
+        <h2 class="member-h2">Welcome <span class="member-name"></span></h2>
       </div>
     </div>
-  </div>
+	</div>
+-->
+<!---->
+<div class="container-fluid pt">
+	<h1>PORTFOLIO</h1>
+	<div class="row mt centered"><!--row opening-->
+		<div class="col-lg-4">
+			<p>PROPHET YONATAN AKLILU " ነገሮችን ማለፍ " AMAZING MESSAGE 22 ፌብ 2019</p>
+			<iframe width="500" height="300" src="https://www.youtube.com/embed/PXG2X21BPwQ" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+		</div>
+		<div class="col-lg-4">
+			<p>ተስፋን የስጠ የታመነ ነው" ሙሉ ትምህርት አስደናቂ ትምህርት በአገልጋይ ዮናታን አክሊሉ SEP 17, 2018 MARSIL TV</p>
+			<iframe width="500" height="300" src="https://www.youtube.com/embed/dSV_VTChbIY" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+		</div>
+		<div class="col-lg-4">
+			<p>PROPHET YONATAN AKLILU " ነገሮችን ማለፍ " AMAZING MESSAGE 22 ፌብ 2019</p>
+			<iframe width="500" height="300" src="https://www.youtube.com/embed/PXG2X21BPwQ" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+		</div>
+	</div><!-- /row -->
+	<div class="row mt centered"><!--row opening-->
+		<div class="col-lg-4">
+			<p>PROPHET YONATAN AKLILU " ነገሮችን ማለፍ " AMAZING MESSAGE 22 ፌብ 2019</p>
+			<iframe width="500" height="300" src="https://www.youtube.com/embed/PXG2X21BPwQ" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+		</div>
+		<div class="col-lg-4">
+			<p>ተስፋን የስጠ የታመነ ነው" ሙሉ ትምህርት አስደናቂ ትምህርት በአገልጋይ ዮናታን አክሊሉ SEP 17, 2018 MARSIL TV</p>
+			<iframe width="500" height="300" src="https://www.youtube.com/embed/dSV_VTChbIY" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+		</div>
+		<div class="col-lg-4">
+			<p>PROPHET YONATAN AKLILU " ነገሮችን ማለፍ " AMAZING MESSAGE 22 ፌብ 2019</p>
+			<iframe width="500" height="300" src="https://www.youtube.com/embed/PXG2X21BPwQ" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+		</div>
+</div><!-- /container -->
+<!-- +++++ Footer Section +++++ -->
   <div id="footer">
 		<div class="container">
 			<div class="row">
 				<div class="col-lg-4">
 					<a name="contact-info"></a>
 					<h4>GET IN TOUCH WITH ME!</h4>
-					You can reach me via email or phone call.
-					I would love to hear from you!
+					<p class="member-p">You can reach me via email or phone call.
+					I would love to hear from you!</p>
 					<p>
 						Name:<br />
 						Gezahegn Worku.<br /><br />
@@ -75,10 +125,7 @@
 					<p> My name is Gezahegn Worku. I am from Olathe KS. I created this portfolio page to showcase my work in that i
 						have done while i was in KU Coding Bootcamp.</p>
 				</div><!-- /col-lg-4 -->
-
-
 			</div>
-
 		</div>
 	</div>
 
@@ -86,7 +133,30 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script src="js/blog.js" type="text/javascript"></script>
   <script type="text/javascript" src="js/members.js"></script>
+<script>
+function cycleBackgrounds() {
+    var index = 0;
+ 
+    $imageEls = $('.container .slide'); // Get the images to be cycled.
+ 
+    setInterval(function () {
+        // Get the next index.  If at end, restart to the beginning.
+        index = index + 1 < $imageEls.length ? index + 1 : 0;
+        
+        // Show the next
+        $imageEls.eq(index).addClass('show');
+        
+        // Hide the previous
+        $imageEls.eq(index - 1).removeClass('show');
+    }, 2000);
+};
+ 
+// Document Ready.
+$(function () {
+    cycleBackgrounds();
+});
 
+</script>
 </body>
 
 </html>

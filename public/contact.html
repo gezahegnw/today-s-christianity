@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://maxcdn.bootstrapcdn.com/bootswatch/4.0.0/flatly/bootstrap.min.css" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Contact Me</title>
+    <link rel="stylesheet" href="stylesheets/contact.css" />
+    <link rel="stylesheet" href="css/styles.css" media="screen" title="no title">
+
+  </head>
+  <body>
+    	<nav class="navbar navbar-expand-sm bg-dark navbar-dark fixed-top">
+          <div class="container-fluid">
+              <a class="navbar-brand" href="#">Today"s Christianity</a>
+               <div class="navbar-header">
+              <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+              <span class="navbar-toggler-icon"></span>
+              </button>
+             <div class="collapse navbar-collapse" id="collapsibleNavbar">
+              <ul class="nav navbar-nav navbar-right"> 
+                <li class="dropdown-menu">           
+                  <li><a class="nav-link" href="members.html">Home</a></li>   
+                </li>
+              </ul>
+          </div>
+      </nav>
+    <div class="imagebg"></div>
+    <div class="container">
+      <div class="form-container">
+        <div class="row" id="row">
+            <h3 class="h3">Contact Form</h3>
+          <form class="col s12" id="reused_form">
+            <div class="row">
+              <div class="input-field col-12">
+                <label for="name">Name</label><br />
+                <input
+                  id="name"
+                  type="text"
+                  name="name"
+                  required
+                  class="validate"
+                />
+              </div>
+            </div>
+            <div class="row">
+              <div class="input-field col-12">
+                <label for="email">Email</label><br />
+                <input
+                  id="email"
+                  type="email"
+                  name="email"
+                  required
+                  class="validate"
+                />
+              </div>
+            </div>
+            <div class="row">
+              <div class="input-field col-12">
+                <label for="message">Message</label><br />
+                <textarea
+                  id="message"
+                  name="message"
+                  class="materialize-textarea"
+                  class="validate"
+                ></textarea>
+              </div>
+            </div>
+            <div>
+              <button
+                class="waves-effect waves-light btn submitbtn"
+                type="submit"
+              >
+                Submit
+              </button>
+            </div>
+          </form>
+          <div
+            id="error_message"
+            style="width:100%; height:100%; display:none; "
+          >
+            <h4>Error</h4>
+            Sorry there was an error sending your form.
+          </div>
+          <div
+            id="success_message"
+            style="width:100%; height:100%; display:none; "
+          >
+            <h4>Success! Your Message was Sent Successfully.</h4>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--Import jQuery before materialize.js-->
+    <script
+      type="text/javascript"
+      src="https://code.jquery.com/jquery-2.1.1.min.js"
+    ></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/js/materialize.min.js"></script>
+    <script>
+      $(function() {
+        function after_form_submitted(data) {
+          if (data.result == "success") {
+            $("form#reused_form").hide();
+            $("#success_message").show();
+            $("#error_message").hide();
+          } else {
+            $("#error_message").append("<ul></ul>");
+
+            jQuery.each(data.errors, function(key, val) {
+              $("#error_message ul").append("<li>" + key + ":" + val + "</li>");
+            });
+            $("#success_message").hide();
+            $("#error_message").show();
+
+            //reverse the response on the button
+            $('button[type="button"]', $form).each(function() {
+              $btn = $(this);
+              label = $btn.prop("orig_label");
+              if (label) {
+                $btn.prop("type", "submit");
+                $btn.text(label);
+                $btn.prop("orig_label", "");
+              }
+            });
+          } //else
+        }
+
+        $("#reused_form").submit(function(e) {
+          e.preventDefault();
+
+          $form = $(this);
+          //show some response on the button
+          $('button[type="submit"]', $form).each(function() {
+            $btn = $(this);
+            $btn.prop("type", "button");
+            $btn.prop("orig_label", $btn.text());
+            $btn.text("Sending ...");
+          });
+
+          $.ajax({
+            type: "POST",
+            url: "handler.php",
+            data: $form.serialize(),
+            success: after_form_submitted,
+            dataType: "json"
+          });
+        });
+      });
+    </script>
+  </body>
+</html>

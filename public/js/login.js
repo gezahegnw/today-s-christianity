@@ -29,7 +29,7 @@ $(document).ready(function() {
       password: password
     }).then(function(data) {
       window.location.replace(data);
-      alert("Wellcome! you have loged in!");
+     // alert("Wellcome! you have loged in!");
       // If there's an error, log the error
     }).catch(function(err) {
       alert("Ivalide cerdential");

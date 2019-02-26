@@ -55,6 +55,9 @@ input[type=submit] {
   border-radius: 10px;
   margin-bottom: 80px;
 }
+.button {
+  margin-top: 30px;
+}
 
 /* The message box is shown when the user clicks on the password field */
 #message {

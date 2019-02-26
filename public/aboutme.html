@@ -2,20 +2,21 @@
 <html lang="en">
 
 <head>
+  <title>Passport Authentication</title>
   <meta charset="UTF-8">
-  <title>Blog - Express</title>
-  <!-- Latest compiled and minified CSS & JS -->
-  <link href="https://maxcdn.bootstrapcdn.com/bootswatch/4.0.0/flatly/bootstrap.min.css" rel="stylesheet">
-  <script src="https://code.jquery.com/jquery.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-  <link rel="stylesheet" href="css/styles.css" media="screen" title="no title">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+	<link href="https://maxcdn.bootstrapcdn.com/bootswatch/4.0.0/flatly/bootstrap.min.css" rel="stylesheet">
+	<script src="https://code.jquery.com/jquery.js"></script>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" href="css/styles.css" media="screen" title="no title">
+  <link rel="stylesheet" href="stylesheets/member.css">
+  <link href="stylesheets/aboutme.css" rel="stylesheet">
 
 
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-sm bg-dark navbar-dark fixed-top">
+		<nav class="navbar navbar-expand-sm bg-dark navbar-dark fixed-top">
         <div class="container-fluid">
             <a class="navbar-brand" href="#">Today"s Christianity</a>
              <div class="navbar-header">
@@ -26,28 +27,30 @@
             <ul class="nav navbar-nav navbar-right"> 
               <li class="dropdown-menu">           
                 <li><a class="nav-link" href="members.html">Home</a></li>
-              <!-- <li><a class="nav-link" href="index.html">About</a></li>
-                <li><a class="nav-link" href="portfolio.html">Portfolio</a></li>
-                <li><a class="nav-link" href="contact.html">Contact</a></li>    -->
+                   
               </li>
             </ul>
         </div>
-    </nav>
-      <div class="container blog">
-          <div class="row">
-            <div class="col-md-2 col-sm-2">
-              <a class="btn btn-light" href="/cms">New Post</a>
-            </div>
-            <div class="col-md-2 col-sm-2">
-              <a class="btn btn-light" href="/authors">Manage Authors</a>
-            </div>
-          </div>
-    <div class="row">
-      <div class="col-md-12 blog-container">
-      </div>
-    </div>
-  </div>
-  <!--footer-->
+		</nav>
+        <div id="ww">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-8 col-lg-offset-2 centered">
+                            <img id="bio-image" src="image/myphoto.jpg" height="200" width="200" alt="imageGezahegn image" />
+                            <h1>GET TO KNOW ME!</h1>
+                            <hr />
+                            <p>
+                                My Name is Gezahegn Worku. I am from Olathe KS. I am Junior Full Stack Web Developer.
+                                I have always been very interested and passionate About Technologies. Especially web Technologies.
+                                I develop websites and web applications. When dealing with a project I pay attention to the smallest details 
+                                addressing problems with patience. Development help me to free my creative mind and allow me fulfil my desire in the
+                                direction of constant self-growth.
+                            </p>
+                        </div><!-- /col-lg-8 -->
+                    </div><!-- /row -->
+                </div> <!-- /container -->
+            </div><!-- /ww -->
+<!-- +++++ Footer Section +++++ -->
   <div id="footer">
 		<div class="container">
 			<div class="row">
@@ -79,14 +82,14 @@
 				<a name="about"></a>
 				<div class="col-lg-4">
 					<h4>About Me</h4>
-					<p> My name is Gezahegn Worku. I am from Olathe KS. I created this portfolio page to showcase my work in that i
-						have done while i was in KU Coding Bootcamp.</p>
+					
 				</div><!-- /col-lg-4 -->
 			</div>
 		</div>
 	</div>
-  <!-- Custom Script -->
+
   <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.17.0/moment.min.js" type="text/javascript"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script src="js/blog.js" type="text/javascript"></script>
   <script type="text/javascript" src="js/members.js"></script>
 

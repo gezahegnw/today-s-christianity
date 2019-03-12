@@ -10,9 +10,21 @@ var session = require("express-session");
 // Requiring passport as we've configured it
 var passport = require("./config/passport");
 // Sets up the Express App
-// =============================================================
+
+//gg
+http = require('http');
 var app = express();
+var server = http.createServer(app);
+var io = require('socket.io').listen(server);
+
+users = [];
+connections = [];
+
+//gg
+// =============================================================
+//var app = express();
 var PORT = process.env.PORT || 8080;
+//var PORT = server.listen(process.env.PORT || 8080);
 
 // Requiring our models for syncing
 var db = require("./models");
@@ -38,6 +50,40 @@ require("./routes/author-api-routes.js")(app);
 require("./routes/post-api-routes.js")(app);
 require("./routes/html-routes.js")(app);
 require("./routes/user-routes.js")(app);
+//gg
+app.get("/", function(req, res) {
+  res.sendFile(__dirname + "/chat.html");
+});
+
+io.sockets.on('connection', function(socket) {
+  connections.push(socket);
+  console.log('Connection: %S sockets connected', connections.length);
+
+  //this will disconnect the connection
+  socket.on('disconnect', function(data){
+      if(!socket.username) return;
+      users.splice(users.indexOf(socket.username), 1);
+      updateusernames();
+      connections.splice(connections.indexOf(socket), 1);
+      console.log('Disconnected: %S sockets connected', connections.length);
+      //to run the app type "node server" inside the console then press enter
+  });
+  //send message
+  socket.on('send message', function(data){
+      io.sockets.emit('new message', {msg: data, user: socket.username});
+  });
+  //new user
+  socket.on('new user', function(data, callback){
+      callback(true);
+      socket.username = data;
+      users.push(socket.username);
+      updateusernames();
+  });
+  function updateusernames(){
+      io.sockets.emit('get users', users);
+  }
+});
+//gg
 // Syncing our sequelize models and then starting our Express app
 // =============================================================
 db.sequelize.sync({ force: true }).then(function() {

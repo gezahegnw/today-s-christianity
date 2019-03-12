@@ -111,7 +111,7 @@ $(document).ready(function() {
       .parent()
       .parent()
       .data("post");
-    deletePost(currentPost.id);
+   // deletePost(currentPost.id);//i changed this on 3/12/19 i commneted out
   }
 
   // This function figures out which post we want to edit and takes it to the appropriate url

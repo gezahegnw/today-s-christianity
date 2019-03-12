@@ -5,43 +5,36 @@
 	<meta charset="UTF-8">
 	<title>CMS - Express</title>
 	<!-- Latest compiled and minified CSS & JS -->
-	<link href="https://maxcdn.bootstrapcdn.com/bootswatch/4.0.0/flatly/bootstrap.min.css" rel="stylesheet">
-	<link rel="stylesheet" href="css/styles.css" media="screen" title="no title">
-	<script src="https://code.jquery.com/jquery.js"></script>
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
-	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">	<link rel="stylesheet" href="stylesheets/post.css">
 </head>
 
 <body>
-		<nav class="navbar navbar-expand-sm bg-dark navbar-dark fixed-top">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="#">Today"s Christianity</a>
-             <div class="navbar-header">
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
-            <span class="navbar-toggler-icon"></span>
-            </button>
-           <div class="collapse navbar-collapse" id="collapsibleNavbar">
-            <ul class="nav navbar-nav navbar-right"> 
-              <li class="dropdown-menu">   
-								<li><a class="nav-link" href="members.html">Home</a></li>
-                <li><a class="nav-link" href="index.html">About</a></li>
-                <li><a class="nav-link" href="portfolio.html">Portfolio</a></li>
-                <li><a class="nav-link" href="contact.html">Contact</a></li>    
-              </li>
-            </ul>
-        </div>
-		</nav>
-		<div class="container hidden">
-				<div class="row top-30">
-					<div class="col-md-2 col-sm-2">
-						<a class="btn btn-light" href="/blog">Go to Blog</a>
-					</div>
-					<div class="col-md-2 col-sm-2">
-						<a class="btn btn-light" href="/authors">Manage Authors</a>
-					</div>
-				</div>
-
+	<nav class="navbar navbar-expand-md bg-dark navbar-dark fixed-top">
+		<h2 class="h2"><i class="fas fa-cross"></i>Today"s Christianity</h2>
+		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+		<div class="collapse navbar-collapse" id="collapsibleNavbar">
+			<ul class="nav navbar-nav navbar-right">
+				<li><a class="nav-link" href="members.html">Home</a></li>
+				<li><a class="nav-link" href="blog.html">Blog</a></li>
+				<li><a class="nav-link" href="author-manager.html">Create Author</a></li>
+			</ul>
+		</div>
+	</nav>
+	<div class="container hidden">
+		<div class="row top-30">
+			<div class="col-md-2 col-sm-2">
+				<a class="btn btn-light" href="/blog">Go to Blog</a>
+			</div>
+			<div class="col-md-2 col-sm-2">
+				<a class="btn btn-light" href="/authors">Manage Authors</a>
+			</div>
+		</div>
 		<div class="row">
 			<div class="col-md-6 offset-md-3">
 				<form id="cms">
@@ -54,7 +47,7 @@
 						<div class="form-group">
 							<label for="category">Select Author:</label>
 							<select class="custom-select" id="author">
-  						</select>
+							</select>
 						</div>
 						<br />
 						<button type="submit" class="btn btn-success submit">Submit</button>
@@ -70,8 +63,8 @@
 				<div class="col-lg-4">
 					<a name="contact-info"></a>
 					<h4>GET IN TOUCH WITH ME!</h4>
-					You can reach me via email or phone call.
-					I would love to hear from you!
+					<p class="member-p">You can reach me via email or phone call.
+						I would love to hear from you!</p>
 					<p>
 						Name:<br />
 						Gezahegn Worku.<br /><br />
@@ -84,26 +77,41 @@
 				</div><!-- /col-lg-4 -->
 
 				<div class="col-lg-4">
-					<h4>My Links</h4>
-					<p>
-						<a href="https://github.com/gezahegnw"><i class="fa fa-github" aria-hidden="true" style="font-size:38px;color:white"></i></a><br>
-						<a class="nav-link" href="https://linkedin.com/in/gezahegn-worku-aug1982"><i class="fa fa-linkedin-square" style="font-size:38px;color:white"></i></a><br />
-						<!--<a href="index.html"><i class="fa fa-home fa-3x" aria-hidden="true"></i></a><br />-->
-						<a href="resume.pdf"><i class="fa fa-file-pdf-o fa-2x" aria-hidden="true"></i> Resume</a>
-					</p>
+					<!--	<h4>My Links</h4>
+						<p>
+							<a href="https://github.com/gezahegnw"><i class="fa fa-github" aria-hidden="true" style="font-size:38px;color:white"></i></a><br>
+							<a class="nav-link" href="https://linkedin.com/in/gezahegn-worku-aug1982"><i class="fa fa-linkedin-square" style="font-size:38px;color:white"></i></a><br />
+							<!--<a href="index.html"><i class="fa fa-home fa-3x" aria-hidden="true"></i></a><br />-->
+					<!--	<a href="resume.pdf"><i class="fa fa-file-pdf-o fa-2x" aria-hidden="true"></i> Resume</a>
+						</p>-->
 				</div><!-- /col-lg-4 -->
+
 				<a name="about"></a>
 				<div class="col-lg-4">
-					<h4>About Me</h4>
-					<p> My name is Gezahegn Worku. I am from Olathe KS. I created this portfolio page to showcase my work in that i
-						have done while i was in KU Coding Bootcamp.</p>
+					<h4>Good News Of Bible</h4>
+					<p>
+						In Matthew 24, Jesus’ disciples ask Him for the signs of the “close of the age.” Matthew 24:14
+						is significant for the end times because it tells us that the gospel will be spread throughout
+						the world “and then the end will come.” This will be one last chance for non-believers to hear,
+						believe and repent.
+						<br>
+
+					</p>
+
+					<p>
+						“And this gospel of the kingdom will be preached in all the world as a witness to all the
+						nations, and then the end will come.”
+					</p>
+					<p> Matthew 24:14</p>
 				</div><!-- /col-lg-4 -->
-
-
 			</div>
-
 		</div>
 	</div>
+	<footer>
+		<div class="footer">
+			Created by Gezahegn Worku &#169;
+		</div>
+	</footer>
 	<!-- Custom Script -->
 	<script src="js/cms.js" type="text/javascript"></script>
 

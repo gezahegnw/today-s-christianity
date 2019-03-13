@@ -1,8 +1,3 @@
-// *****************************************************************************
-// Server.js - This file is the initial starting point for the Node/Express server.
-//
-// ******************************************************************************
-// *** Dependencies
 // =============================================================
 var express = require("express");
 var bodyParser = require("body-parser");
@@ -10,31 +5,17 @@ var session = require("express-session");
 // Requiring passport as we've configured it
 var passport = require("./config/passport");
 // Sets up the Express App
+var socket = require('socket.io');
 
-//gg
-http = require('http');
-var app = express();
-var server = http.createServer(app);
-var io = require('socket.io').listen(server);
-
-users = [];
-connections = [];
-
-//gg
 // =============================================================
-//var app = express();
+var app = express();
 var PORT = process.env.PORT || 8080;
 //var PORT = server.listen(process.env.PORT || 8080);
 
 // Requiring our models for syncing
 var db = require("./models");
-/*
-// Sets up the Express app to handle data parsing
-app.use(express.urlencoded({ extended: true }));
-app.use(express.json());
-*/
+
 // Creating express app and configuring middleware needed for authentication
-var app = express();
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 // Static directory
@@ -50,10 +31,40 @@ require("./routes/author-api-routes.js")(app);
 require("./routes/post-api-routes.js")(app);
 require("./routes/html-routes.js")(app);
 require("./routes/user-routes.js")(app);
+
+// Syncing our sequelize models and then starting our Express app
+// =============================================================
+/*db.sequelize.sync({ force: true }).then(function() {
+  app.listen(PORT, function() {
+    console.log("App listening on PORT " + PORT);
+  });
+  */
+ var syncOptions = { force: false };
+
+// If running a test, set syncOptions.force to true
+// clearing the `testdb`
+if (process.env.NODE_ENV === "test") {
+  syncOptions.force = true;
+}
+ // Starting the server, syncing our models ------------------------------------/
+db.sequelize.sync(syncOptions).then(function() {
+  const server = app.listen(PORT, function() {
+    console.log(
+      "==> 🌎  Listening on port %s. Visit http://localhost:%s/ in your browser.",
+      PORT,
+      PORT
+    );
+  });
+  //gg
+
+users = [];
+connections = [];
 //gg
 app.get("/", function(req, res) {
   res.sendFile(__dirname + "/chat.html");
 });
+
+const io = socket(server);
 
 io.sockets.on('connection', function(socket) {
   connections.push(socket);
@@ -84,10 +95,5 @@ io.sockets.on('connection', function(socket) {
   }
 });
 //gg
-// Syncing our sequelize models and then starting our Express app
-// =============================================================
-db.sequelize.sync({ force: true }).then(function() {
-  app.listen(PORT, function() {
-    console.log("App listening on PORT " + PORT);
-  });
+
 });

@@ -25,11 +25,14 @@ body {
      padding-left: 70%; 
  }
  #jumbotron {
-     color: rgb(5, 0, 0);
+     color: rgb(211, 13, 13);
+     font-weight: 700;
+     padding-bottom: 30px;
  }
  .lead , .content {
-     color: rgb(7, 0, 0);
+     color: whitesmoke;
      font-size: 20px;
+     font-weight: 700;
  }
  p {
     line-height: 28px;
@@ -39,7 +42,7 @@ body {
     font-weight: bold;
 }
 .jumbotron  {
- background-image: url("../images/6.jpg"); /* The image used */
+ background-image: url("../images/7.jpg"); /* The image used */
 background-color: #cccccc; /* Used if the image is unavailable */
 height: auto; /* You must set a specified height */
 background-repeat: no-repeat; /* Do not repeat the image */
@@ -67,5 +70,8 @@ background-size: cover;
     .member-h2 {
         padding-left: 0 !important; 
     }
-    
+    .lead , .content {
+        color: whitesmoke;
+        padding-bottom: 50px;
+    }
   }

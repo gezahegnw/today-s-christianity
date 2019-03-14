@@ -1,0 +1,72 @@
+body {
+    background-image: url("../images/8.jpg"); /* The image used */
+    background-color: #cccccc; /* Used if the image is unavailable */
+    height: auto; /* You must set a specified height */
+    background-repeat: no-repeat; /* Do not repeat the image */
+    background-size: cover;}
+
+#messageArea {
+    display: none;
+}
+.container {
+    padding-top: 60px;
+}
+#userFormArea {
+    width: 80%;
+}
+.fa-cross {
+    padding-right: 10px;
+}
+  .h2 {
+    color: whitesmoke;
+  }
+  .btn-light:hover {
+    background-color: rgb(40, 136, 245);
+  }
+ #well {
+    position: absolute;
+    width: 250px;
+ }
+#chat-div{
+    margin-left: 30%;
+    width: 300px;
+}
+label{
+    font-size: 20px;
+    font-weight: 700;
+}
+
+#chat{
+    font-size: 20px;
+
+}
+.well {
+    padding-left: 20px;
+}
+@media only screen and (max-width: 600px) {
+   div {
+       width: 100%;
+   }
+   #well {
+    position: relative;
+    width: 100%;
+ }
+#chat-div{
+    margin-left: 0;
+    width: 100%;
+}
+#userFormArea {
+    width: 100%;
+}
+.container {
+    padding-top: 20px;
+}
+.list-group-item {
+    position: relative;
+    display: block;
+    /* padding: .75rem 1.25rem; */
+    margin-bottom: -1px;
+    background-color: #fff;
+    border: 1px solid rgba(0,0,0,.125);
+}
+  }

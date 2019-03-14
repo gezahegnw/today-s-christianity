@@ -18,6 +18,11 @@
   .h2 {
     color: whitesmoke;
   }
+  .para {
+    color: white;
+    font-size: 20px;
+    text-align: center;
+  }
   .fa-cross {
     padding-right: 10px;
 }

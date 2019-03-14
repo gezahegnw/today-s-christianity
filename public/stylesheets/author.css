@@ -8,6 +8,7 @@
     background-repeat: no-repeat; /* Do not repeat the image */
     background-size: cover;
  }
+
   button.submit {
     float: right;
   }
@@ -53,7 +54,11 @@
     margin-top: 25px;
   }
   
-  
+  .para {
+    color: white;
+    font-size: 20px;
+    text-align: center;
+  }
   .blog {
     margin-top: 30px !important;
   }

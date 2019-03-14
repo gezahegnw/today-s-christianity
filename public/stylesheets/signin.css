@@ -96,12 +96,20 @@ input[type=submit] {
   left: -35px;
   content: "✔";
 }
-
+#login-dialog {
+  color: red;
+  font-weight: 700;
+}
 /* Add a red text color and an "x" when the requirements are wrong */
 .invalid {
   color: red;
 }
-
+.fa-exclamation-triangle {
+  color: red;
+  font-size: 30px;
+  padding-right: 10px;
+  font-weight: 700;
+}
 .invalid:before {
   position: relative;
   left: -35px;

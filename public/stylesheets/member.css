@@ -18,6 +18,10 @@ body {
  .fa-cross {
      padding-right: 10px;
  }
+ .fa-comments {
+    padding-right: 5px;
+    color: rgb(50, 238, 150);
+}
  .h2 {
     color: whitesmoke;
   }

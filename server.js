@@ -1,4 +1,5 @@
 // =============================================================
+require("dotenv").config();
 var express = require("express");
 var bodyParser = require("body-parser");
 var session = require("express-session");
@@ -6,14 +7,14 @@ var session = require("express-session");
 var passport = require("./config/passport");
 // Sets up the Express App
 var socket = require('socket.io');
-
-// =============================================================
-var app = express();
-var PORT = process.env.PORT || 8080;
-//var PORT = server.listen(process.env.PORT || 8080);
-
 // Requiring our models for syncing
 var db = require("./models");
+
+// =============================================================
+var PORT = process.env.PORT || 8080;
+var app = express();
+//var PORT = server.listen(process.env.PORT || 8080);
+
 
 // Creating express app and configuring middleware needed for authentication
 app.use(bodyParser.urlencoded({ extended: false }));
@@ -93,7 +94,9 @@ io.sockets.on('connection', function(socket) {
   function updateusernames(){
       io.sockets.emit('get users', users);
   }
+  
 });
 //gg
 
 });
+module.exports = app;

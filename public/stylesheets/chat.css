@@ -27,10 +27,20 @@ body {
  #well {
     position: absolute;
     width: 250px;
+    background-color: rgb(184, 212, 212);
+    padding: 20px;
+    border-radius: 15px;
+    border: 1px solid #BFBFBF;
+    box-shadow: 10px 10px 5px #aaaaaa;
  }
 #chat-div{
     margin-left: 30%;
     width: 300px;
+    background-color: rgb(81, 133, 163);
+    padding: 10px;
+    border-radius: 15px;
+    border: 1px solid #BFBFBF;
+    box-shadow: 10px 10px 5px #aaaaaa;
 }
 label{
     font-size: 20px;
@@ -51,6 +61,7 @@ label{
    #well {
     position: relative;
     width: 100%;
+    margin-bottom: 20px;
  }
 #chat-div{
     margin-left: 0;

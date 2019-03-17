@@ -16,10 +16,14 @@
     "body-parser": "^1.18.3",
     "dotenv": "^7.0.0",
     "express": "^4.16.3",
+    "express-handlebars": "^3.0.2",
     "express-session": "^1.15.6",
+    "handlebar": "^1.0.0",
     "mysql2": "^1.6.5",
+    "nodemailer": "^5.1.1",
     "passport": "^0.4.0",
     "passport-local": "^1.0.0",
+    "path": "^0.12.7",
     "sequelize": "^4.3.1",
     "socket.io": "^2.2.0"
   }

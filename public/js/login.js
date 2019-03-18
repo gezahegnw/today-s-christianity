@@ -16,9 +16,9 @@ $(document).ready(function() {
       return;
     }
     //g
-    if (userData.email === '' || userData.password === '') {
-      return ;
-    }
+    // if (userData.email === '' || userData.password === '') {
+    //   return ;
+    // }
 
     //g
 

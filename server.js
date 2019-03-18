@@ -11,6 +11,7 @@ var socket = require('socket.io');
 var db = require("./models");
 //=======================================================
 const nodemailer = require('nodemailer');
+const path = require('path');
 
 
 // =============================================================
@@ -100,6 +101,7 @@ io.sockets.on('connection', function(socket) {
   
 });
 //gg
+app.use('/public', express.static(path.join(__dirname, 'public')));
 app.post('/send', (req, res) => {
   const output = `
     <p>You have a new contact request</p>

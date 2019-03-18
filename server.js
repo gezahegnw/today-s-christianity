@@ -44,16 +44,16 @@ require("./routes/user-routes.js")(app);
     console.log("App listening on PORT " + PORT);
   });
   */
- var syncOptions = { force: false };
+var syncOptions = { force: false };
 
 // If running a test, set syncOptions.force to true
 // clearing the `testdb`
 if (process.env.NODE_ENV === "test") {
   syncOptions.force = true;
 }
- // Starting the server, syncing our models ------------------------------------/
-db.sequelize.sync(syncOptions).then(function() {
-  const server = app.listen(PORT, function() {
+// Starting the server, syncing our models ------------------------------------/
+db.sequelize.sync(syncOptions).then(function () {
+  const server = app.listen(PORT, function () {
     console.log(
       "==> 🌎  Listening on port %s. Visit http://localhost:%s/ in your browser.",
       PORT,
@@ -62,49 +62,56 @@ db.sequelize.sync(syncOptions).then(function() {
   });
   //gg
 
-users = [];
-connections = [];
-//gg
-app.get("/", function(req, res) {
-  res.sendFile(__dirname + "/chat.html");
-});
+  users = [];
+  connections = [];
+  //gg
+  app.get("/", function (req, res) {
+    res.sendFile(__dirname + "/chat.html");
+  });
 
-const io = socket(server);
+  const io = socket(server);
 
-io.sockets.on('connection', function(socket) {
-  connections.push(socket);
-  console.log('Connection: %S sockets connected', connections.length);
+  io.sockets.on('connection', function (socket) {
+    connections.push(socket);
+    console.log('Connection: %S sockets connected', connections.length);
 
-  //this will disconnect the connection
-  socket.on('disconnect', function(data){
-      if(!socket.username) return;
+    //this will disconnect the connection
+    socket.on('disconnect', function (data) {
+      if (!socket.username) return;
       users.splice(users.indexOf(socket.username), 1);
       updateusernames();
       connections.splice(connections.indexOf(socket), 1);
       console.log('Disconnected: %S sockets connected', connections.length);
       //to run the app type "node server" inside the console then press enter
-  });
-  //send message
-  socket.on('send message', function(data){
-      io.sockets.emit('new message', {msg: data, user: socket.username});
-  });
-  //new user
-  socket.on('new user', function(data, callback){
+    });
+    //send message
+    socket.on('send message', function (data) {
+      io.sockets.emit('new message', { msg: data, user: socket.username });
+    });
+    //new user
+    socket.on('new user', function (data, callback) {
       callback(true);
       socket.username = data;
       users.push(socket.username);
       updateusernames();
-  });
-  function updateusernames(){
+    });
+    function updateusernames() {
       io.sockets.emit('get users', users);
-  }
+    }
+    socket.on('typing', function(data) {
+      socket.broadcast.emit('typing', data);
+  });
+
+  });
+  //gg
   
-});
-//gg
-app.use('/public', express.static(path.join(__dirname, 'public')));
-app.post('/send', (req, res) => {
-  const output = `
-    <p>You have a new contact request</p>
+  app.use('/public', express.static(path.join(__dirname, 'public')));
+  app.get('/', (req, res) => {
+    res.render('contact');
+  });
+  app.post('/send', (req, res) => {
+    const output = `
+    <p>You have a new contact request from your BLOGGER APP!</p>
     <h3>Contact Details</h3>
     <ul>  
       <li>Name: ${req.body.name}</li>
@@ -115,15 +122,18 @@ app.post('/send', (req, res) => {
     <h3>Message</h3>
     <p>${req.body.message}</p>
   `;
+ 
+
 
   // create reusable transporter object using the default SMTP transport
   let transporter = nodemailer.createTransport({
-    host: 'smpt.gmail.com',
-    port: 587,
-    secure: false, // true for 465, false for other ports
+    // host: 'smpt.gmail.com',
+    // port: 587,
+    // secure: false, // true for 465, false for other ports
+    service: 'gmail',
     auth: {
-        user: 'gezahegnw@gmail.com', // generated ethereal user
-        pass: 'wemet2001'  // generated ethereal password
+        user: process.env.EMAIL, // generated ethereal user
+        pass: process.env.PASSWORD  // generated ethereal password
     },
     tls:{
       rejectUnauthorized:false
@@ -132,9 +142,9 @@ app.post('/send', (req, res) => {
 
   // setup email data with unicode symbols
   let mailOptions = {
-      from: '"Nodemailer Contact" <gezahegnw@email.com>', // sender address
+      from: req.body.email, //'"Nodemailer Contact" <gezaworku@gmail.com>', // sender address
       to: 'gezahegnw@gmail.com', // list of receivers
-      subject: 'Node Contact Request', // Subject line
+      subject: 'This EMAIL from my BLOGGER APP', // Subject line
       text: 'Hello world?', // plain text body
       html: output // html body
   };
@@ -150,6 +160,5 @@ app.post('/send', (req, res) => {
       res.render('contact', {msg:'Email has been sent'});
   });
   });
-//g
 });
 module.exports = app;

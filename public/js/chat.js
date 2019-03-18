@@ -39,4 +39,7 @@ $(document).ready(function () {
             $users.html(html);
         });
     });
+    socket.on('typing', function (data) {
+        feedback.innerHTML = '<p><em>' + data + ' is typing a message...</em></p>';
+    });
 });

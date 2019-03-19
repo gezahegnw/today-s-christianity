@@ -77,13 +77,13 @@ $(document).ready(function() {
     var editBtn = $("<button>");
     editBtn.text("EDIT");
     editBtn.addClass("edit btn btn-info");
-    var newPostTitle = $("<h2>");
+    var newPostTitle = $("<h3>");
     var newPostDate = $("<small>");
-    var newPostAuthor = $("<h5>");
+    var newPostAuthor = $("<h4>");
     newPostAuthor.text("Written by: " + post.Author.name);
     newPostAuthor.css({
       float: "right",
-      color: "blue",
+      color: "red",
       "margin-top":
       "-10px"
     });

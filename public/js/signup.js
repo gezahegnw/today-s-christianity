@@ -42,4 +42,8 @@ $(document).ready(function() {
     $("#alert .msg").text(err.responseJSON);
     $("#alert").fadeIn(500);
   }
+  
+});
+app.get("*", function(req, res) {
+  res.render("404");
 });

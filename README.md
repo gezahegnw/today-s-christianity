@@ -1,12 +1,12 @@
 * **Folder:** 
 
 * **INSTRUCTIONS:**
-## clone repo 
+* clone repo 
 
-# install dependencies run npm install
+* install dependencies run npm install
 
-# user npm start command to run the app
+* user npm start command to run the app
 
-# heroku deployed link  https://blooming-escarpment-87871.herokuapp.com/
+*  heroku deployed link  https://blooming-escarpment-87871.herokuapp.com/
 
   

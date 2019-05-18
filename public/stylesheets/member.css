@@ -26,7 +26,7 @@ body {
     color: whitesmoke;
   }
  .member-h2 {
-     padding-left: 70%; 
+     padding-left: auto; 
  }
  #jumbotron {
      color: rgb(211, 13, 13);
@@ -67,6 +67,7 @@ background-size: cover;
     left: 0;
     bottom: 0;
 }
+
 @media only screen and (max-width: 600px) {
     body {
       background-color: lightblue;

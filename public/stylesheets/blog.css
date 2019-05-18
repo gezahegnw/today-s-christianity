@@ -61,6 +61,7 @@ body {
     left: 0;
     bottom: 0;
 }
+
 @media only screen and (max-width: 600px) {
     body {
       background-color: rgb(170, 248, 238);

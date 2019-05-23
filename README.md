@@ -9,4 +9,6 @@
 
 *  heroku deployed link  https://blooming-escarpment-87871.herokuapp.com/
 
+* to run the app, type npm start command in your terminal then press enter
+
   

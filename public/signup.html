@@ -11,6 +11,16 @@
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
   <link rel="stylesheet" href="stylesheets/signup.css">
+  <style>
+    body {
+      color: white;
+      height: 100%;
+      width: 100%;
+      background-position: center center;
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+  </style>
 </head>
 
 <body>
@@ -64,7 +74,21 @@
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script type="text/javascript" src="js/signup.js"></script>
+  <script src="js/easy_background.js"></script>
+<!--this is for background slideshow start-->
+  <script>
+    easy_background("body",
 
+      {
+        slide: ["images/img/1.jpg", "images/img/2.jpg", "images/img/3.jpg", "images/img/4.jpg", "images/img/5.jpg",],
+
+        delay: [2000, 2000, 2000, 2000, 2000]
+      }
+
+
+    );
+  </script>
+<!--this is for background slideshow end-->
 
   <script>
     var myInput = document.getElementById("password-input");

@@ -72,10 +72,10 @@ $(document).ready(function() {
     var newPostCardHeading = $("<div>");
     newPostCardHeading.addClass("card-header");
     var deleteBtn = $("<button>");
-    deleteBtn.text("x");
-    deleteBtn.addClass("delete btn btn-danger");
+   // deleteBtn.text("x");
+   // deleteBtn.addClass("delete btn btn-danger");
     var editBtn = $("<button>");
-    editBtn.text("EDIT");
+   editBtn.text("EDIT");
     editBtn.addClass("edit btn btn-info");
     var newPostTitle = $("<h3>");
     var newPostDate = $("<small>");

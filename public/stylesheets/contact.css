@@ -3,12 +3,14 @@
   }
   
   body{
-    background-image: url("/assets/img/contact-page.jpg");
-    background-repeat: no-repeat, repeat;
+    background-image: url("../images/14.jpg");
     background-color: #cccccc;    color:#485e74;
     line-height:1.6;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     padding:1em;
+    height: auto; /* You must set a specified height */
+    background-repeat: no-repeat; /* Do not repeat the image */
+    background-size: cover;
   }
   
   .container{
@@ -115,6 +117,16 @@
  .navbar a {
     color: whitesmoke;
   }
+  button {
+    background-color: #097ef3 !important;
+    width: auto !important;
+    border-radius: 10px;
+  }
+  .contact form input {
+    width: 100%;
+     padding: 0 !important; 
+    border: 1px solid #b0f3ea;
+}
   /* LARGE SCREENS */
   @media(min-width:700px){
     .wrapper{

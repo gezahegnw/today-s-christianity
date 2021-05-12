@@ -21,7 +21,7 @@
     "express-session": "^1.15.6",
     "handlebar": "^1.0.0",
     "mysql2": "^1.6.5",
-    "nodemailer": "^5.1.1",
+    "nodemailer": "^6.4.16",
     "passport": "^0.4.0",
     "passport-local": "^1.0.0",
     "path": "^0.12.7",
